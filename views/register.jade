@@ -1,0 +1,29 @@
+h1 RegisterPage
+
+p please enter your account information
+
+script (type='text/javascript')
+	function validateForm() {
+		var x = document.forms["registerform"]["username"].value;
+		var y = document.forms["registerform"]["password"].value;
+		var z = document.forms["registerform"]["password2"].value;
+		if (x == "" || y == "" || z == "") {
+			alert("Must enter a username and password!");
+			return false;
+		} else if (y != z) {
+			alert("Passwords do not match!");
+			return false;
+		}
+		return true;
+	}
+
+form(name="registerform", action="/register", enctype="multipart/form-data", method="post", onsubmit="return validateForm()")
+	p= message
+	p Username: 
+		input(type="text", name="username")
+	p Password: 
+		input(type="password", name="password")
+	p Repeat Password: 
+		input(type="password", name="password2")
+	input(type="hidden", name="_csrf", value=token)
+	input(type="submit", value="Register")

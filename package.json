@@ -1,0 +1,13 @@
+{
+	"name": "forum",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "2.5.10",
+		"jade": ">=0.0.1",
+		"backbone": ">=0.0.0",
+		"mysql": ">=0.0.0",
+		"bcrypt": ">=0.0.0",
+		"socket.io": ">=0.0.0"
+	}
+}

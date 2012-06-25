@@ -1,0 +1,24 @@
+h1 LoginPage
+
+p please enter your login information
+
+script (type='text/javascript')
+	function validateForm() {
+		var x = document.forms["loginform"]["username"].value;
+		var y = document.forms["loginform"]["password"].value;
+		if (x=="" || y == "") {
+			alert("Must enter a username and password");
+			return false;
+		}
+		return true;
+	}
+
+form(name="loginform", action="/login", enctype="multipart/form-data",
+	method="post", onsubmit="return validateForm()")
+	p= message
+	p Username: 
+		input(type="text", name="username")
+	p Password: 
+		input(type="password", name="password")
+	input(type="hidden", name="_csrf", value=token)
+	input(type="submit", value="Login")
